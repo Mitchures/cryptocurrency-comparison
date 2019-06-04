@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Cryptocurrency from './Cryptocurrency'
 import axios from 'axios'
 
-class Card extends Component {
+class Container extends Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -49,12 +49,12 @@ class Card extends Component {
   }
 
   render() {
-    let card = this.state.data.map((currency) =>
+    let crypto = this.state.data.map((currency) =>
       <Cryptocurrency data={currency} key={currency.id} />
     );
     return this.state.loaded ? (
         <div className="container">
-          <div className="card">{card}</div>
+          <div className="crypto-container">{crypto}</div>
           <div className="load-more" onClick={() => this.getCryptoData(5)}>Load More</div>
         </div>
       )
@@ -66,4 +66,4 @@ class Card extends Component {
   }
 }
 
-export default Card
+export default Container

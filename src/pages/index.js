@@ -1,14 +1,13 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import Card from "../components/Card"
+import Container from "../components/Container"
 import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Crypto" keywords={[`cryptocurrency`, `comparison`, `react`]} />
-    <p>View current cryptocurrency prices (USD).</p>
-    <Card />
+    <Container />
   </Layout>
 )
 
