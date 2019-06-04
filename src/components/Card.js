@@ -7,11 +7,12 @@ class Card extends Component {
     super(props)
     this.state = {
       data: [],
-      loaded: false
+      loaded: false,
+      limit: 5
     }
   }
 
-  getCryptoData () {
+  getCryptoData (newLimit) {
     axios({
       method: 'GET',
       url: 'https://cors-anywhere.herokuapp.com/' + process.env.GATSBY_API_URL,
@@ -29,11 +30,13 @@ class Card extends Component {
     })
       .then(res => {
         console.log(res)
-        const cc = ['bitcoin', 'bitcoin-cash', 'ripple', 'ethereum', 'litecoin', 'stellar', 'basic-attention-token', 'funfair', 'request', 'augur']
-        const result = res.data.data.filter(currency => cc.includes(currency.slug))
+        let numItems = this.state.limit
+        if(newLimit) numItems = this.state.limit + newLimit
+        const result = res.data.data.splice(0, numItems).map(currency => currency)
         this.setState({
           loaded: true,
-          data: result
+          data: result,
+          limit: numItems
         })
       })
       .catch(err => {
@@ -52,6 +55,7 @@ class Card extends Component {
     return this.state.loaded ? (
         <div className="container">
           <div className="card">{card}</div>
+          <div className="load-more" onClick={() => this.getCryptoData(5)}>Load More</div>
         </div>
       )
       : <div className="container">

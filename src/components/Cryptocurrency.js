@@ -18,8 +18,10 @@ class Cryptocurrency extends Component {
           </div>
           <div className="coin-content">
             <h3 className="cryptocurrency-name">{name} ({symbol})</h3>
-            <h1 className="cryptocurrency-price"><NumberFormat value={quote.USD.price} displayType={'text'} decimalScale={2} fixedDecimalScale={true} thousandSeparator={true} prefix={'$'} /></h1>
             <h3 className={quote.USD.percent_change_1h > 0 ? 'percentage-increase' : 'percentage-decrease'}>{quote.USD.percent_change_1h}%</h3>
+          </div>
+          <div className="coin-price">
+            <h1 className="cryptocurrency-price"><NumberFormat value={quote.USD.price} displayType={'text'} decimalScale={2} fixedDecimalScale={true} thousandSeparator={true} prefix={'$'} /></h1>
           </div>
         </div>
       </div>

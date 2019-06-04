@@ -14,11 +14,11 @@ body {
   line-height: 1.5;
   text-rendering: optimizeLegibility;
   max-width: 50rem;
-  color: #c6d8ef;
-  background: #2a3657;
+  color: #ffffff;
+  background: #2b2f3e;
 }
 
-h1
+h1,
 h2,
 h3 {
   line-height: 1.1;
@@ -26,7 +26,7 @@ h3 {
 
 h1,
 h2 {
-  color: #fffbfb;
+  color: #ffffff;
 }
 
 h1 {
@@ -48,10 +48,6 @@ h3 {
   }
 }
 
-a {
-  color: #2fa8f2;
-}
-
 .cryptocurrency {
   display: flex;
   align-items: left;
@@ -59,7 +55,7 @@ a {
   flex: 1 1 225px;
   flex-direction: column;
   padding: 1.125rem;
-  background: #36426c;
+  background: #4c5163;
   box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
   transform: translate3d(0, 0, 0);
   transition: transform .15s ease;
@@ -108,6 +104,31 @@ img {
 
 .loading-box {
   text-align: center;
+}
+
+.load-more {
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex: 1 1 225px;
+  flex-direction: column;
+  grid-gap: 1rem;
+  margin: 0 15px;
+  grid-template-columns: repeat(1,1fr);
+  padding: 1.125rem;
+  background: #4c5163;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.075);
+  transform: translate3d(0, 0, 0);
+  transition: transform .15s ease;
+  &:hover {
+    box-shadow: 0 0 10px 1px rgba(0,0,0,.075);
+    transform: translate3d(0, -4px, 0);
+  }
+  &:active {
+    background: #191d28;
+    transform: translate3d(0, -4px, 0);
+  }
 }
 
 .card {
