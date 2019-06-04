@@ -21,6 +21,9 @@ class Card extends Component {
         convert: 'USD'
       },
       headers: {
+        'Accept': 'application/json',
+        'Access-Control-Allow-Origin': "*",
+        'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
         'X-CMC_PRO_API_KEY': process.env.API_KEY
       }
     })
