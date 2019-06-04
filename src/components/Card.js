@@ -14,7 +14,7 @@ class Card extends Component {
   getCryptoData () {
     axios({
       method: 'GET',
-      url: 'https://cors-anywhere.herokuapp.com/' + process.env.API_URL,
+      url: process.env.API_URL, // for local testing use: 'https://cors-anywhere.herokuapp.com/' + process.env.API_URL
       params: {
         start: 1,
         limit: 5000,
