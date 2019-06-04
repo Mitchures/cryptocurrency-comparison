@@ -25,19 +25,6 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/btc.png`
       },
-    },
-    `gatsby-plugin-offline`,
-    {
-      resolve: `gatsby-source-apiserver`,
-      options: {
-        url: process.env.API_URL,
-        method: `get`,
-        headers: {
-          'X-CMC_PRO_API_KEY': process.env.API_KEY
-        },
-        name: `crypto`,
-        schemaType: `array`,
-      }
     }
   ],
 }
