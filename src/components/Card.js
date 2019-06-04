@@ -12,11 +12,11 @@ class Card extends Component {
   }
 
   getCryptoData () {
-    console.log(process.env.API_KEY)
-    console.log(process.env.API_URL)
+    console.log(process.env.GATSBY_API_KEY)
+    console.log(process.env.GATSBY_API_URL)
     axios({
       method: 'GET',
-      url: 'https://cors-anywhere.herokuapp.com/' + process.env.API_URL, // for local testing use: 'https://cors-anywhere.herokuapp.com/' + process.env.API_URL
+      url: 'https://cors-anywhere.herokuapp.com/' + process.env.GATSBY_API_URL, // for local testing use: 'https://cors-anywhere.herokuapp.com/' + process.env.API_URL
       params: {
         start: 1,
         limit: 5000,
@@ -26,7 +26,7 @@ class Card extends Component {
         'Accept': 'application/json',
         'Access-Control-Allow-Origin': "*",
         'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-        'X-CMC_PRO_API_KEY': process.env.API_KEY
+        'X-CMC_PRO_API_KEY': process.env.GATSBY_API_KEY
       }
     })
       .then(res => {
